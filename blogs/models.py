@@ -31,11 +31,11 @@ class Article(models.Model):
 """
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    feature_id = models.IntegerField(max_length=11)
-    parent_id  = models.IntegerField(max_length=11)
-    status = models.IntegerField(max_length=6)
-    created_at = models.DateTimeField("date created_at")
-    updated_at = models.DateTimeField("date updated_at")
+    feature_id = models.IntegerField(max_length=11,blank=True)
+    parent_id  = models.IntegerField(max_length=11,blank=True)
+    status = models.IntegerField(max_length=6,blank=True)
+    created_at = models.DateTimeField("date created_at",blank=True)
+    updated_at = models.DateTimeField("date updated_at",blank=True)
 
     def __str__(self):
         return self.name
@@ -45,12 +45,12 @@ class Category(models.Model):
 """
 class Comment(models.Model):
     content = models.CharField(max_length=255)
-    parent_id = models.IntegerField(max_length=11)
-    article_id = models.IntegerField(max_length=11)
-    member_id = models.IntegerField(max_length=11)
-    status = models.IntegerField(max_length=6)
-    created_at = models.DateTimeField("date created_at")
-    updated_at = models.DateTimeField("date updated_at")
+    parent_id = models.IntegerField(max_length=11,blank=True)
+    article_id = models.IntegerField(max_length=11,blank=True)
+    member_id = models.IntegerField(max_length=11,blank=True)
+    status = models.IntegerField(max_length=6,blank=True)
+    created_at = models.DateTimeField("date created_at",blank=True)
+    updated_at = models.DateTimeField("date updated_at",blank=True)
 
     def __str__(self):
         return self.content
@@ -60,11 +60,11 @@ class Comment(models.Model):
 """
 class Feature(models.Model):
     name = models.CharField(max_length=255)
-    desc = models.CharField(max_length=255)
-    status = models.IntegerField(max_length=6)
-    sort = models.IntegerField(max_length=6)
-    created_at = models.DateTimeField("date created_at")
-    updated_at = models.DateTimeField("date updated_at")
+    desc = models.CharField(max_length=255,blank=True)
+    status = models.IntegerField(max_length=6,blank=True)
+    sort = models.IntegerField(max_length=6,blank=True)
+    created_at = models.DateTimeField("date created_at",blank=True)
+    updated_at = models.DateTimeField("date updated_at",blank=True)
 
     def __str__(self):
         return self.name
@@ -74,7 +74,7 @@ class Feature(models.Model):
 """
 class Message(models.Model):
     title = models.CharField(max_length=255)
-    content = models.CharField(max_length=255)
-    status = models.IntegerField(max_length=6)
-    created_at = models.DateTimeField("date created_at")
-    updated_at = models.DateTimeField("date updated_at")
+    content = models.CharField(max_length=255,blank=True)
+    status = models.IntegerField(max_length=6,blank=True)
+    created_at = models.DateTimeField("date created_at",blank=True)
+    updated_at = models.DateTimeField("date updated_at",blank=True)
